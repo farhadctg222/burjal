@@ -1,0 +1,9 @@
+.dddd{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+   
+ }
+ .dddd li{
+    margin: 30px;
+ }

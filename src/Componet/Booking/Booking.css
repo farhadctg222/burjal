@@ -1,0 +1,22 @@
+.title h1{
+    
+}
+.bookHeader{
+    width: 400px;
+   
+    
+    
+   
+}
+img{
+    width: 400px;
+    height: 200px;
+}
+.dddddd{
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+.detail h1 button{
+    display: inline;
+    font-size: 10px;
+}
