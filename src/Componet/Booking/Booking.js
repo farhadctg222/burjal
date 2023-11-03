@@ -1,5 +1,6 @@
 import React from 'react';
 import './Booking.css'
+import {Link} from 'react-router-dom'
 
 const Booking = (props) => {
    
@@ -10,15 +11,15 @@ const Booking = (props) => {
        <div className="bookHeader">
         <div className="dddddd">
         <div className="title">
-            <h1>{avatar}</h1>
-            <h1 style={{display:'inline-flex'}}>{title}</h1><p>{description}</p>
+            <h1 className='avatar'>{avatar}</h1>
+            <h1 className='titles'>{title}</h1><p>{description}</p>
         </div>
         <div className="bookImg">
             <img src={imgUrl} alt="" />
         </div>
         <div className="detail">
-            <h1>Capacity{capacity}</h1><h1>bedType{bedType}</h1><h1>Price:{price}</h1>
-            <button>Book Now</button>
+            <h1>Capacity: {capacity}</h1><h1>bedType: {bedType}</h1><h1>Price: {price}</h1>
+          <Link to=''> <button className='button'>Book Now</button></Link> 
         </div>
         </div>
        </div>

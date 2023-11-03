@@ -1,5 +1,8 @@
 .main{
-    flex-direction: row-reverse;
+   
     flex-wrap: wrap;
-    display: flex;
+    display: flex; 
+    justify-content: center;
+   
+   
 }
