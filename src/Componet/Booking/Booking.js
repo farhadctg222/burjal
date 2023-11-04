@@ -1,11 +1,15 @@
 import React from 'react';
 import './Booking.css'
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
+
 
 const Booking = (props) => {
    
     const {title,bedType,avatar,price,capacity,description,imgUrl} = props.room
-    console.log(title,bedType)
+    // const history = useNavigate()
+    // const handleBook = (bedType)=>{
+    //     history(`/book/${bedType}`);
+    // }
     return (
        <>
        <div className="bookHeader">
@@ -15,11 +19,11 @@ const Booking = (props) => {
             <h1 className='titles'>{title}</h1><p>{description}</p>
         </div>
         <div className="bookImg">
-            <img src={imgUrl} alt="" />
+            <img className='img' src={imgUrl} alt="" />
         </div>
         <div className="detail">
             <h1>Capacity: {capacity}</h1><h1>bedType: {bedType}</h1><h1>Price: {price}</h1>
-          <Link to=''> <button className='button'>Book Now</button></Link> 
+     <Link to='/book'> <button  className='button'>Book Now</button></Link>
         </div>
         </div>
        </div>

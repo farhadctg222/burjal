@@ -3,9 +3,15 @@ import Home from './Componet/Home/Home';
 import Header from './Componet/Header/Header';
 import Login from './Componet/Login/Login';
 import Room from './Componet/Room/Room';
-import Booking from './Componet/Booking/Booking';
+import {createContext, useState } from 'react';
+import PrivetRoute from './Componet/PrivetRoute/PrivetRoute';
+import Book from './Componet/Book/Book';
+export  const UserContex = createContext()
 function App() {
+  const [logInuser,setlogInuser]= useState({})
   return (
+    <UserContex.Provider value={[logInuser,setlogInuser]}>
+      <h1>{logInuser.email}</h1>
     <BrowserRouter>
    <Header></Header>
    
@@ -16,12 +22,16 @@ function App() {
       <Route path='/room' element={<Room></Room>}></Route>
       <Route path='/home' element={<Home></Home>}></Route>
      
+      
+         <Route path="/book" element={<PrivetRoute><Book/></PrivetRoute>}/>
+
 
 
     </Routes>
     
     
     </BrowserRouter>
+    </UserContex.Provider>
    
   );
 }
