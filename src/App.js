@@ -4,8 +4,8 @@ import Header from './Componet/Header/Header';
 import Login from './Componet/Login/Login';
 import Room from './Componet/Room/Room';
 import {createContext, useState } from 'react';
-import PrivetRoute from './Componet/PrivetRoute/PrivetRoute';
 import Book from './Componet/Book/Book';
+import PrivetRoute from './Componet/PrivetRoute/PrivetRoute';
 export  const UserContex = createContext()
 function App() {
   const [logInuser,setlogInuser]= useState({})
@@ -23,8 +23,8 @@ function App() {
       <Route path='/home' element={<Home></Home>}></Route>
      
       
-         <Route path="/book" element={<PrivetRoute><Book/></PrivetRoute>}/>
-
+         <Route path={"/book/:bedType"}element={<PrivetRoute><Book></Book></PrivetRoute>}/>
+        
 
 
     </Routes>

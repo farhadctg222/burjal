@@ -4,18 +4,19 @@ import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { UserContex } from '../../App';
-import {useLocation, useNavigate } from 'react-router-dom';
+import {useLocation, useNavigate, useParams} from 'react-router-dom';
 
 
 
 const Login = () => {
-    const [login, setlogn]= useState({})
+    const {bedType} = useParams()
+    const [login, setlogin]= useState({})
     const [logInuser,setlogInuser]= useContext(UserContex)
     const navigate = useNavigate()
   const location = useLocation()
-  const {from}= location.state || {from:{pathname:'/book'}}
+  const {from} = location.state || {from:{pathname:"/home"}}
 
-    console.log(login)
+   
 
     const firebaseConfig = {
         apiKey: "AIzaSyBM334JmDWB35NRco5qtLSsg-TGkosGpVU",
@@ -35,7 +36,8 @@ const Login = () => {
     const google = ()=>{
         signInWithPopup(auth,provider)
         .then(result=>{
-            setlogn(result.user)
+            console.log(result.user)
+           setlogin(result.user)
             setlogInuser(result.user)
             navigate(from)
         })

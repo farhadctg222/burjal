@@ -23,7 +23,7 @@ const Booking = (props) => {
         </div>
         <div className="detail">
             <h1>Capacity: {capacity}</h1><h1>bedType: {bedType}</h1><h1>Price: {price}</h1>
-     <Link to='/book'> <button  className='button'>Book Now</button></Link>
+     <Link to={"/book/" +title}>  <button  className='button'>Book Now</button></Link>
         </div>
         </div>
        </div>
