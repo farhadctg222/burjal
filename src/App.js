@@ -6,6 +6,7 @@ import Room from './Componet/Room/Room';
 import {createContext, useState } from 'react';
 import Book from './Componet/Book/Book';
 import PrivetRoute from './Componet/PrivetRoute/PrivetRoute';
+import Footer from './Componet/Footer/Footer';
 export  const UserContex = createContext()
 function App() {
   const [logInuser,setlogInuser]= useState({})
@@ -15,19 +16,23 @@ function App() {
     <BrowserRouter>
    <Header></Header>
    
+   
     <Routes>
       
 
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/room' element={<Room></Room>}></Route>
-      <Route path='/home' element={<Home></Home>}></Route>
-     
+      <Route path='/' element={<Home></Home>}></Route>
+           <Route path='/' element={<Home></Home>}></Route>
+
       
          <Route path={"/book/:bedType"}element={<PrivetRoute><Book></Book></PrivetRoute>}/>
         
-
+         
 
     </Routes>
+    <Footer></Footer>
+
     
     
     </BrowserRouter>

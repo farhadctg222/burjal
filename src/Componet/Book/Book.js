@@ -61,12 +61,12 @@ const Book = () => {
           
            
             <DatePicker
-            label="Controlled picker"
+            label="Check In Date"
             value={setValue.checkIn}
             onChange={handleChance}
             />
              <DatePicker
-            label="Controlled picker"
+            label="Check Out Date"
             value={setValue.checkout}
             onChange={handleout}
             />
