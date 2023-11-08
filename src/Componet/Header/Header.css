@@ -6,4 +6,18 @@
  }
  .dddd li{
     margin: 30px;
+    padding: 15px;
+    font-weight: bolder;
+    color: white;
+ }
+ .global{
+   font-size: 50px;
+   color: rgb(1, 158, 106);
+   
+   font-family: monospace;
+   font-weight: bolder;
+ }
+ .dddd li:hover{
+   background-color: rgba(2, 2, 2,0.2);
+   color: white;
  }

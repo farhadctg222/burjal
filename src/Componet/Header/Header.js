@@ -17,13 +17,13 @@ const Header = () => {
     return (
         <div className='header'style={style}>
             <div className="dddd">
-           <li>  <Link to='/home' style={{textDecoration: 'none',color:'red'}}>Home</Link></li>
-          <li> <Link to='/login'style={{textDecoration: 'none',color:'green'}}>Login</Link></li> 
-          <li> <Link to='/room'style={{textDecoration: 'none',color:'yellow'}}>Room</Link></li> 
+           <li>  <Link to='/home' style={{textDecoration: 'none'}}>Home</Link></li>
+          <li> <Link to='/login'style={{textDecoration: 'none'}}>Login</Link></li> 
+          <li> <Link to='/room'style={{textDecoration: 'none'}}>Room</Link></li> 
             </div>
             <div className="header">
                 <h1 style={{fontSize: '100px'}}>Burj Al Arob</h1>
-                <h3 style={{fontSize: '50px',color:'white'}}>A global Icon of  luxury Hotel</h3>
+                <h3 className='global'>A global Icon of  luxury Hotel</h3>
 
             </div>
            
