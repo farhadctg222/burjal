@@ -23,7 +23,7 @@ const Header = () => {
             </div>
             <div className="header">
                 <h1 style={{fontSize: '100px'}}>Burj Al Arob</h1>
-                <h3 style={{fontSize: '50px'}}>A global Icon of  luxury Hotel</h3>
+                <h3 style={{fontSize: '50px',color:'white'}}>A global Icon of  luxury Hotel</h3>
 
             </div>
            
