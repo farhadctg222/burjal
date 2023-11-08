@@ -3,7 +3,7 @@ import React from 'react';
 const Room = () => {
     return (
         <div>
-            <h1>dddddddd</h1>
+            <h1>this is comming soon......</h1>
         </div>
     );
 };
