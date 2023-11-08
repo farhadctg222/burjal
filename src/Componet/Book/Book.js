@@ -74,10 +74,7 @@ const Book = () => {
     </LocalizationProvider>
     </div>
             <button onClick={handle}>book now</button>
-            {
-                detail.map(detail=>{return detail})
-            }
-            <h1>{detail.email}</h1>     
+               
         </div>
     );
 };
