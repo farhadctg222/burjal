@@ -46,6 +46,7 @@ const Login = () => {
     return (
         <div className='loginHeader'>
             <h1>{login.displayName}</h1>
+            <title>Dubble Room</title>
             <img src={login.photoURL} alt="" /><br />
            <button onClick={google} className='google'>GoogleLogin</button>
         </div>

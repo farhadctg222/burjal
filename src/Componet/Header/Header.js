@@ -17,6 +17,7 @@ const Header = () => {
     return (
         <div className='header'style={style}>
             <div className="dddd">
+            <title>Single Couple Rooam</title>
            <li>  <Link to='/home' style={{textDecoration: 'none'}}>Home</Link></li>
           <li> <Link to='/login'style={{textDecoration: 'none'}}>Login</Link></li> 
           <li> <Link to='/room'style={{textDecoration: 'none'}}>Room</Link></li> 
