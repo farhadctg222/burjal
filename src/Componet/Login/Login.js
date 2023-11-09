@@ -36,8 +36,9 @@ const Login = () => {
     const google = ()=>{
         signInWithPopup(auth,provider)
         .then(result=>{
-            console.log(result.user)
-           setlogin(result.user)
+            const {email,displayName}= result.user
+            const signIn = {name:email,displayName:displayName}
+           setlogin(signIn)
             setlogInuser(result.user)
             navigate(from)
         })
