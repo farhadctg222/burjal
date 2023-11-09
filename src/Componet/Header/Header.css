@@ -11,11 +11,12 @@
     color: white;
  }
  .global{
-   font-size: 50px;
+   font-size: 30px;
    color: rgb(1, 158, 106);
    
-   font-family: monospace;
+   
    font-weight: bolder;
+
  }
  .dddd li:hover{
    background-color: rgba(2, 2, 2,0.2);

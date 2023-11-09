@@ -53,8 +53,8 @@ const Book = () => {
   
     return (
         <div style={{textAlign:'center',marginLeft:'auto'}}>
-            <h1>{logInuser.email}</h1>
-            <h1>lets go book {bedType} </h1>
+            <h2 style={{color:'red'}}>Hello,<br />{logInuser.email}</h2>
+            <h1>lets go book :<br/>{bedType} </h1>
             <Link to='/home'>what a defarent ?</Link><br /> <br />
             <div className="time" style={{marginLeft:'auto'}}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -64,7 +64,7 @@ const Book = () => {
             label="Check In Date"
             value={setValue.checkIn}
             onChange={handleChance}
-            />
+            /> <br /> <br />
              <DatePicker
             label="Check Out Date"
             value={setValue.checkout}
@@ -72,8 +72,8 @@ const Book = () => {
             />
        
     </LocalizationProvider>
-    </div>
-            <button onClick={handle}>book now</button>
+    </div> <br />
+            <button className="button" onClick={handle}>book now</button>
                
         </div>
     );
