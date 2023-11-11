@@ -6,21 +6,23 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import BookingRoom from '../BookingRoom/BookingRoom';
 
 
 const Book = () => {
     const {bedType,title} = useParams();
     const [logInuser,setlogInuser]= useContext(UserContex)
     const [detail,setdetail] = useState({})
+   
     console.log(detail)
     const [value, setValue] = useState({
         checkIn :new Date(),
         checkout : new Date(),
         bedType: bedType
     });
-    console.log(value)
+    
     const handle = ()=>{
-        const newBooking = {...value,...logInuser,}
+        const newBooking = {...value,...logInuser}
         fetch('http://localhost:4000/addBooking',{
         method:'POST',
         headers: {'Content-Type': 'application/json'},
@@ -28,7 +30,7 @@ const Book = () => {
        
         })
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>setValue(data))
     }   
 
     const handleout = (date)=>{
@@ -47,13 +49,14 @@ const Book = () => {
         .then(res=>res.json())
         .then(data=>{
             setdetail(data)
-            console.log(data)
+            
         })
     }, [])
   
     return (
+        <>
         <div style={{textAlign:'center',marginLeft:'auto'}}>
-            <h1>{logInuser.email}</h1>
+            <h1 style={{color:'red'}}>{logInuser.email}</h1>
             <h1>lets go book {bedType} </h1>
             <Link to='/home'>what a defarent ?</Link><br /> <br />
             <div className="time" style={{marginLeft:'auto'}}>
@@ -66,16 +69,20 @@ const Book = () => {
             onChange={handleChance}
             />
              <DatePicker
+            
             label="Check Out Date"
             value={setValue.checkout}
             onChange={handleout}
             />
        
     </LocalizationProvider>
-    </div>
-            <button onClick={handle}>book now</button>
-               
+    </div><br />
+            <button className='button' onClick={handle}>book now</button>
+            
+           
         </div>
+       <BookingRoom></BookingRoom>
+        </>
     );
 };
 
