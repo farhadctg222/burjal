@@ -39,6 +39,7 @@ const Login = () => {
             console.log(result.user)
            setlogin(result.user)
             setlogInuser(result.user)
+            storeToken()
             navigate(from)
         })
     }
