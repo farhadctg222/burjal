@@ -50,7 +50,7 @@ const Book = () => {
     return (
         <>
         <div style={{textAlign:'center',marginLeft:'auto'}}>
-            <h1 style={{color:'red'}}>{logInuser.email}</h1>
+            <h1>{logInuser.email}</h1>
             <h1>lets go book {bedType} </h1>
             <Link to='/home'>what a defarent ?</Link><br /> <br />
             <div className="time" style={{marginLeft:'auto'}}>
@@ -61,7 +61,7 @@ const Book = () => {
             label="Check In Date"
             value={setValue.checkIn}
             onChange={handleChance}
-            />
+            /> <br /> <br />
              <DatePicker
             
             label="Check Out Date"
@@ -70,10 +70,9 @@ const Book = () => {
             />
        
     </LocalizationProvider>
-    </div><br />
-            <button className='button' onClick={handle}>book now</button>
-            
-           
+    </div>
+            <button onClick={handle}>book now</button>
+               
         </div>
        <BookingRoom></BookingRoom>
         </>

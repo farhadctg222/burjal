@@ -36,14 +36,9 @@ const Login = () => {
     const google = ()=>{
         signInWithPopup(auth,provider)
         .then(result=>{
-            const {email,displayName}= result.user
-            const signIn = {email:email,displayName:displayName}
-          
-            
-           setlogin(signIn)
-            setlogInuser(signIn)
-            storeToken()
-           
+            console.log(result.user)
+           setlogin(result.user)
+            setlogInuser(result.user)
             navigate(from)
         })
     }
@@ -59,8 +54,9 @@ const Login = () => {
     return (
         <div className='loginHeader'>
             <h1>{login.displayName}</h1>
+            <title>Dubble Room</title>
             <img src={login.photoURL} alt="" /><br />
-           <button className='button' onClick={google}>GoogleLogin</button>
+           <button onClick={google}>GoogleLogin</button>
         </div>
     );
 };

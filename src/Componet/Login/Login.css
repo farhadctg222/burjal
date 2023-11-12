@@ -4,3 +4,12 @@ img{
 .loginHeader{
     text-align: center;
 }
+.google{
+    
+    background-color: red;
+    padding: 15px;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    font-weight: bolder;
+}
