@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './Login.css'
 import { initializeApp } from "firebase/app";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { UserContex } from '../../App';
 import {useLocation, useNavigate, useParams} from 'react-router-dom';
@@ -38,18 +38,29 @@ const Login = () => {
         .then(result=>{
             const {email,displayName}= result.user
             const signIn = {email:email,displayName:displayName}
-            console.log(signIn)
+          
             
            setlogin(signIn)
             setlogInuser(signIn)
+            storeToken()
+           
             navigate(from)
         })
+    }
+    const storeToken = ()=>{
+       auth.currentUser.getIdToken(true)
+        .then(function(idToken) {
+          console.log(idToken)
+          sessionStorage.setItem('idToken',idToken)
+          }).catch(function(error) {
+            // Handle error
+          });
     }
     return (
         <div className='loginHeader'>
             <h1>{login.displayName}</h1>
             <img src={login.photoURL} alt="" /><br />
-           <button onClick={google}>GoogleLogin</button>
+           <button className='button' onClick={google}>GoogleLogin</button>
         </div>
     );
 };

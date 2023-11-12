@@ -12,9 +12,10 @@ import BookingRoom from '../BookingRoom/BookingRoom';
 const Book = () => {
     const {bedType,title} = useParams();
     const [logInuser,setlogInuser]= useContext(UserContex)
+    console.log(logInuser)
     const [detail,setdetail] = useState({})
    
-    console.log(detail)
+    
     const [value, setValue] = useState({
         checkIn :new Date(),
         checkout : new Date(),
@@ -44,14 +45,7 @@ const Book = () => {
         setValue(newdate)
     }
 
-    useEffect(() => {
-        fetch('http://localhost:4000/Booking')
-        .then(res=>res.json())
-        .then(data=>{
-            setdetail(data)
-            
-        })
-    }, [])
+    
   
     return (
         <>
