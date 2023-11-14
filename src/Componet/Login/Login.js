@@ -47,7 +47,7 @@ const Login = () => {
        auth.currentUser.getIdToken(true)
         .then(function(idToken) {
           console.log(idToken)
-          sessionStorage.setItem('idToken',idToken)
+          sessionStorage.setItem('Token',idToken)
           }).catch(function(error) {
             // Handle error
           });
